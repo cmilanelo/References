@@ -28,8 +28,6 @@ namespace MyPlugins
                 (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
 
-
-
             // The InputParameters collection contains all the data passed in the message request.  
             if (context.InputParameters.Contains("Target") &&
                 context.InputParameters["Target"] is Entity)
@@ -37,12 +35,9 @@ namespace MyPlugins
                 // Obtain the target entity from the input parameters.  
                 Entity entity = (Entity)context.InputParameters["Target"];
 
-
                 try
                 {
-                    // Plug-in business logic goes here.  
-
-           
+                    // Plug-in business logic goes here.
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
